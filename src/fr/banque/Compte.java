@@ -11,6 +11,7 @@ public class Compte {
     public Compte(int number, double pay) {
         this.number = number;
         this.pay = pay;
+        System.out.println();
     }
 
 
@@ -19,13 +20,13 @@ public class Compte {
     // display amount
     public void add(double amount) {
         this.pay += amount;
-        System.out.println(pay);
+        System.out.println("credite " + pay);
 
     }
 
     public void debite(double amount) {
         this.pay -= amount;
-        System.out.println(pay);
+        System.out.println("debite " + pay);
     }
 
     public int getNumber() {

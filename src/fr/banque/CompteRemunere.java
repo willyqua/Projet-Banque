@@ -4,11 +4,13 @@ package fr.banque;
 public class CompteRemunere extends Compte {
     private double rate;
 
+
     public CompteRemunere() {
         super();
     }
 
     public CompteRemunere(double rate) {
+        super();
         this.rate = rate;
     }
 
@@ -19,16 +21,18 @@ public class CompteRemunere extends Compte {
     // il sont le coeur de la fonction : sans c'est parametre la fonction ne pourra pas s'exécuter
     // une  voiture ne peux pas tourner sans essence. paramètre essence.
     // question a se poser lor de la création de la méthode : est ce que j'ai besion de paramètre pour quelle s'execute.
-    public double calculRate(Compte compte) {
-        double calcRate = (rate * compte.getPay()/100);
-        //double calcRate = (rate * getPay()) / 100);
-        System.out.println("methode calculRate " + calcRate);
-        return calcRate;
+    private double calculInterest() {
+        double temp = this.getPay();
+        double calcInterest = (rate * this.getPay()) / 100;
+        //double calcInterest = (rate * getPay()) / 100);
+        System.out.println("methode calculInterest " + calcInterest);
+        return calcInterest;
 
     }
 
-    public void addInterest(double calcRate, Compte compte){
-        double finalPay = compte.getPay() + calcRate;
+    public void addInterest() {
+        double finalPay = getPay() + this.calculInterest();
+
         System.out.println("solde du compet apres ajout d'interet " + finalPay);
     }
 
