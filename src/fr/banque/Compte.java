@@ -26,7 +26,6 @@ public class Compte {
     public void debite(double amount) {
         this.pay -= amount;
         System.out.println(pay);
-
     }
 
     public int getNumber() {
