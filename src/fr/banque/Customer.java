@@ -1,5 +1,7 @@
 package fr.banque;
 
+import java.util.Arrays;
+
 // class Customer
 public class Customer {
     // attributs
@@ -23,24 +25,34 @@ public class Customer {
         this.firstName = firstName;
         this.age = age;
         this.number = number;
-
+        this.accounts = new Account[5];
     }
 
     // méthod add account in array account
     // return a message if the account has reached the maximum possible account
     // otherwise add an account if requested
-    /*public void addAccount(Account[] account) {
-        Account[] accounts = new Account[5];
-        //accounts[0]=customer;
-        for (int i = 0; i < accounts.length; i++) {
-            if (accounts.length != 5) {
-                System.out.println("you can have only five accounts");
-
-            } else {
-                this.accounts = accounts;
+    public void addAccount(Account account) {
+                //accounts[0]=customer;
+        for (int i = 0; i < this.accounts.length; i++) {
+            if (this.accounts[i] == null) { // si l'élément de mon index et vide alors il est null .
+                this.accounts[i] = account;
+                return; // permet de ne pas ajouter 5 fois le meme client mais une fois.
             }
         }
-    }*/
+        System.out.println("you can have only five accounts");
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + name + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", age=" + age +
+                ", number=" + number +
+                ", accounts=" + Arrays.toString(accounts) +
+                '}';
+    }
+
 
 // Fonction
 
@@ -49,7 +61,7 @@ public class Customer {
      *
      * @param account : celui à ajouter
      */
-    public void ajouterCompte(Account account) {
+    /*public void ajouterCompte(Account account) {
         int nbAccount = 0;
         for (int i = 0; i < this.accounts.length; i++) {
             if (this.accounts[i] != null) {
@@ -69,7 +81,7 @@ public class Customer {
                 System.out.println("il n'y a plus d'espace de comptes disponible");
             }
 
-    }
+    }*/
 
     /**
      * Fonction qui permet de récupérer un compte dans la liste du client
@@ -80,15 +92,15 @@ public class Customer {
      */
 
     public Account getAccountByNum(int numberAccount) {
-        Account findAccount = new Account();
+        Account findAccount = null;
         for (Account account : this.accounts) {
             if (account.getNumber() == numberAccount) {
                 findAccount = account;
             }
         }
-        /*if (findAccount.equals(null)) {
+        if (findAccount.equals(null)) {
             System.out.println("le compte n'a pas été trouvé");
-        }*/
+        }
         return findAccount;
     }
 

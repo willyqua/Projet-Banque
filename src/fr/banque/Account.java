@@ -5,6 +5,7 @@ public class Account {
     private int number;
     private double pay;
 
+
     public Account() {
     }
 
@@ -23,6 +24,7 @@ public class Account {
         System.out.println("credite " + pay);
 
     }
+
 
     public void debite(double amount) {
         this.pay -= amount;
