@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         // instance de compte appeler bankAccount contenant deux paramètres number et pay.
-        Compte bankAccount = new Compte(123456, 150);
+        Account bankAccount = new Account(123456, 150);
 
 
         // récupére le solde du compte bankAccount.
@@ -22,12 +22,16 @@ public class Main {
         // appelle la méthode addInterest pour rajouter le taux au compte finale .
         // recupére la valeur final du compte
 
-        CompteRemunere finalBankAccount = new CompteRemunere(10.00);
+        AccountRemunerate finalBankAccount = new AccountRemunerate(10.00);
 
         //finalBankAccount.calculInterest(bankAccount);
         finalBankAccount.setPay(150);
 
         finalBankAccount.addInterest();
-
+        Customer accountCustomer = new Customer("ret","eric",18,12345);
+        accountCustomer.setAccounts(accountCustomer.getAccounts());
+        System.out.println(accountCustomer);
+        Account economy = new Account(23424,12345);
+        accountCustomer.ajouterCompte(economy);
     }
 }

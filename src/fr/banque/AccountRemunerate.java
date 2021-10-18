@@ -1,15 +1,15 @@
 package fr.banque;
 
 // rate => taux.
-public class CompteRemunere extends Compte {
+public class AccountRemunerate extends Account {
     private double rate;
 
 
-    public CompteRemunere() {
+    public AccountRemunerate() {
         super();
     }
 
-    public CompteRemunere(double rate) {
+    public AccountRemunerate(double rate) {
         super();
         this.rate = rate;
     }

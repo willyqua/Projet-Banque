@@ -1,14 +1,14 @@
 package fr.banque;
 
-public class Compte {
+public class Account {
 
     private int number;
     private double pay;
 
-    public Compte() {
+    public Account() {
     }
 
-    public Compte(int number, double pay) {
+    public Account(int number, double pay) {
         this.number = number;
         this.pay = pay;
         System.out.println();
