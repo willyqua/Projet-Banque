@@ -1,7 +1,7 @@
 package fr.banque;
 
 // rate => taux.
-public class AccountRemunerate extends Account {
+public class AccountRemunerate extends Account implements IAccountRemerate {
     private double rate;
 
 
@@ -31,6 +31,7 @@ public class AccountRemunerate extends Account {
     }
 
     public void addInterest() {
+       //super.add(this.calculInterest());
         double finalPay = getPay() + this.calculInterest();
 
         System.out.println("solde du compet apres ajout d'interet " + finalPay);

@@ -49,7 +49,7 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Compte{" +
+        return "Account{" +
                 "number=" + number +
                 ", pay=" + pay +
                 '}';

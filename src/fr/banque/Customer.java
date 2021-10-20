@@ -144,4 +144,5 @@ public class Customer {
     public void setAccounts(Account[] accounts) {
         this.accounts = accounts;
     }
+
 }

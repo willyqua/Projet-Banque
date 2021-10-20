@@ -29,7 +29,7 @@ public class Main {
         finalBankAccount.addInterest();
         /////////////////////////////////
         Customer customer = new Customer("ret","eric",18,12345);
-        Account c1 = new Account(1, 1500);
+        Account c1 = new Account(1, 300);
         Account c2 = new Account(2, 150);
         Account c3 = new Account(3, 15000);
         Account c4 = new Account(4, 1600);
@@ -47,5 +47,7 @@ public class Main {
         System.out.println(customer.toString());
        /* Account economy = new Account(23424,12345);
         customer.ajouterCompte(economy);*/
+        ThresholdAccount accountT = new ThresholdAccount(123,300,200);
+        accountT.debitThresholdAccount(5);
     }
 }
